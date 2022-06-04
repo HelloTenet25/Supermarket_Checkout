@@ -1,5 +1,7 @@
 package com.company;
 
+
+
 public class MultipricedItem extends  Item{
     private int quantity;
     private double discountedPrice;

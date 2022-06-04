@@ -1,5 +1,6 @@
 package com.company;
 
+
 public class BuyNGetOneFree extends Item{
     private int quanity;
 

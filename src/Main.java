@@ -1,5 +1,7 @@
 
 import java.io.*;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Scanner;
 
 public class Main {
@@ -10,7 +12,8 @@ public class Main {
 		Item itemC = new Item("C", 0.25);
 		Item itemD = new Item("D", 1.5);
 		Item itemE = new Item("E", 2);
-
+		BuyNGetOneFree buyNGetOneFree = new BuyNGetOneFree("C", 0.75, 4);
+		MultipricedItem multipricedItem = new MultipricedItem("B", 0.6, 2, 1.00);
 		Scanner scan = new Scanner(System.in);
 		while (true) {
 			System.out.println("Select an option: ");
@@ -35,7 +38,8 @@ public class Main {
 							System.out.println("Enter the quantity, you want to buy: ");
 							if (scan.hasNextInt()) {
 								int quantity = scan.nextInt();
-								System.out.println("Your have bought " + quantity + " Item A for total of £" + itemA.getPrice() * quantity);
+								System.out.println("Your have bought " + quantity + " Item A for total of £"
+										+ itemA.getPrice() * quantity);
 							} else {
 								System.out.println("Invalid input ");
 
@@ -45,7 +49,8 @@ public class Main {
 							System.out.println("Enter the quantity, you want to buy: ");
 							if (scan.hasNextInt()) {
 								int quantity = scan.nextInt();
-								System.out.println("Your have bought " + quantity + " Item B for total of £" + itemB.getPrice() * quantity);
+								System.out.println("Your have bought " + quantity + " Item B for total of £"
+										+ itemB.getPrice() * quantity);
 							} else {
 								System.out.println("Invalid input ");
 
@@ -56,7 +61,8 @@ public class Main {
 							System.out.println("Enter the quantity, you want to buy: ");
 							if (scan.hasNextInt()) {
 								int quantity = scan.nextInt();
-								System.out.println("Your have bought " + quantity + " Item C for total of £" + itemC.getPrice() * quantity);
+								System.out.println("Your have bought " + quantity + " Item C for total of £"
+										+ itemC.getPrice() * quantity);
 							} else {
 								System.out.println("Invalid input ");
 
@@ -67,7 +73,8 @@ public class Main {
 							System.out.println("Enter the quantity, you want to buy: ");
 							if (scan.hasNextInt()) {
 								int quantity = scan.nextInt();
-								System.out.println("Your have bought " + quantity + " Item D for total of £" + itemD.getPrice() * quantity);
+								System.out.println("Your have bought " + quantity + " Item D for total of £"
+										+ itemD.getPrice() * quantity);
 							} else {
 								System.out.println("Invalid input ");
 
@@ -78,7 +85,8 @@ public class Main {
 							System.out.println("Enter the quantity, you want to buy: ");
 							if (scan.hasNextInt()) {
 								int quantity = scan.nextInt();
-								System.out.println("Your have bought " + quantity + " Item E for total of £" + itemE.getPrice() * quantity);
+								System.out.println("Your have bought " + quantity + " Item E for total of £"
+										+ itemE.getPrice() * quantity);
 							} else {
 								System.out.println("Invalid input ");
 
@@ -104,6 +112,7 @@ public class Main {
 						selectedOption = scan.nextInt();
 						switch (selectedOption) {
 						case 1:
+
 							break;
 						case 2:
 							break;
@@ -129,4 +138,9 @@ public class Main {
 
 	}
 
+	public static HashMap<String , ClassForHashMap> buyitems(ArrayList<Item> items) {
+		HashMap<String, ClassForHashMap> hashMap = new HashMap<>();
+		
+		return hashMap;
+	}
 }

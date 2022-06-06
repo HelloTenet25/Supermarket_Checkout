@@ -1,5 +1,6 @@
 
 
+import static org.junit.Assert.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.util.ArrayList;
@@ -21,10 +22,10 @@ public class Tests {
 	public void buyItemsTestCaseOne() {
 		Map<String , ClassForHashMap> hashmap = new HashMap<>();
 		hashmap.put("C", new ClassForHashMap(3, 0.75));
-		ArrayList<Item> items  = new ArrayList<>();
-		items.add(itemC);
-		items.add(itemC);
-		items.add(itemC);
+		ArrayList<String> items  = new ArrayList<>();
+		items.add("C");
+		items.add("C");
+		items.add("C");
 		
 		assertEquals(hashmap, Main.buyitems(items));
 	}
@@ -35,10 +36,10 @@ public class Tests {
 		hashmap.put("A", new ClassForHashMap(2, 1.00));
 		
 		
-		ArrayList<Item> items  = new ArrayList<>();
-		items.add(itemA);
-		items.add(itemA);
-		items.add(itemC);
+		ArrayList<String> items  = new ArrayList<>();
+		items.add("A");
+		items.add("A");
+		items.add("C");
 		
 		assertEquals(hashmap, Main.buyitems(items));
 
@@ -48,12 +49,12 @@ public class Tests {
 		Map<String , ClassForHashMap> hashmap = new HashMap<>();
 		hashmap.put("B", new ClassForHashMap(3, 1.6));
 		
-		ArrayList<Item> items  = new ArrayList<>();
-		items.add(itemB);
-		items.add(itemB);
-		items.add(itemB);
-		
-		assertEquals(hashmap, Main.buyitems(items));
+		ArrayList<String> items  = new ArrayList<>();
+		items.add("B");
+		items.add("B");
+		items.add("B");
+		HashMap<String, ClassForHashMap> hashMapToCompare = Main.buyitems(items);
+		assertTrue(hashmap.equals(hashMapToCompare));
 
 	}
 	@Test 
@@ -61,11 +62,11 @@ public class Tests {
 		Map<String , ClassForHashMap> hashmap = new HashMap<>();
 		hashmap.put("C", new ClassForHashMap(4, 0.75));
 		
-		ArrayList<Item> items = new ArrayList<>();
-		items.add(itemC);
-		items.add(itemC);
-		items.add(itemC);
-		items.add(itemC);
+		ArrayList<String> items = new ArrayList<>();
+		items.add("C");
+		items.add("C");
+		items.add("C");
+		items.add("C");
 		
 		assertEquals(hashmap, Main.buyitems(items));
 
@@ -76,13 +77,13 @@ public class Tests {
 		hashmap.put("B", new ClassForHashMap(2, 1.00));
 		hashmap.put("C", new ClassForHashMap(3, 0.75));
 		
-		ArrayList<Item> items  = new ArrayList<>();
-		items.add(itemB);
-		items.add(itemB);
-		items.add(itemC);
-		items.add(itemC);
-		items.add(itemC);
-		items.add(itemC);
+		ArrayList<String> items  = new ArrayList<>();
+		items.add("B");
+		items.add("B");
+		items.add("C");
+		items.add("C");
+		items.add("C");
+		items.add("C");
 		
 		assertEquals(hashmap, Main.buyitems(items));
 

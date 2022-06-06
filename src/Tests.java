@@ -27,7 +27,7 @@ public class Tests {
 		items.add("C");
 		items.add("C");
 		
-		assertEquals(hashmap, Main.buyitems(items));
+		assertTrue(hashmap.equals(Main.buyitems(items)));
 	}
 	@Test 
 	public void buyItemsTestCaseTwo() {
@@ -41,7 +41,7 @@ public class Tests {
 		items.add("A");
 		items.add("C");
 		
-		assertEquals(hashmap, Main.buyitems(items));
+		assertTrue(hashmap.equals(Main.buyitems(items)));
 
 	}
 	@Test 
@@ -67,15 +67,16 @@ public class Tests {
 		items.add("C");
 		items.add("C");
 		items.add("C");
-		
-		assertEquals(hashmap, Main.buyitems(items));
+		HashMap<String, ClassForHashMap> hashMapToCompare = Main.buyitems(items);
+			
+		assertTrue(hashmap.equals(hashMapToCompare));
 
 	}
 	@Test 
 	public void buyItemsTestCaseFive() {
 		Map<String , ClassForHashMap> hashmap = new HashMap<>();
 		hashmap.put("B", new ClassForHashMap(2, 1.00));
-		hashmap.put("C", new ClassForHashMap(3, 0.75));
+		hashmap.put("C", new ClassForHashMap(4, 0.75));
 		
 		ArrayList<String> items  = new ArrayList<>();
 		items.add("B");
@@ -85,7 +86,29 @@ public class Tests {
 		items.add("C");
 		items.add("C");
 		
-		assertEquals(hashmap, Main.buyitems(items));
+		
+		HashMap<String, ClassForHashMap> hashMapToCompare = Main.buyitems(items);
+		
+		assertTrue(hashmap.equals(hashMapToCompare));
+
+	}
+	@Test 
+	public void buyItemsTestCaseSix() {
+		Map<String , ClassForHashMap> hashmap = new HashMap<>();
+		hashmap.put("E", new ClassForHashMap(1, 2));
+		hashmap.put("C", new ClassForHashMap(4, 0.75));
+		
+		ArrayList<String> items = new ArrayList<>();
+		items.add("E");
+		items.add("C");
+		items.add("C");
+		items.add("C");
+		items.add("C");
+		
+		
+		HashMap<String, ClassForHashMap> hashMapToCompare = Main.buyitems(items);
+		
+		assertTrue(hashmap.equals(hashMapToCompare));
 
 	}
 	
